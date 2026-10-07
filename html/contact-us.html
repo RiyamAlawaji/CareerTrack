@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Contact the CareerTrack team by completing the contact form.">
+
+    <title>CareerTrack | Contact Us</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="index.html" class="logo">CareerTrack</a>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="applications.html">Applications</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html" aria-current="page">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p>
+                Have a question or feedback? Complete the form below to contact us.
+            </p>
+        </section>
+
+        <section class="contact-section">
+            <h2>Send Us a Message</h2>
+
+            <form id="contact-form" method="post">
+
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input
+                        type="text"
+                        id="first-name"
+                        name="firstName"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input
+                        type="text"
+                        id="last-name"
+                        name="lastName"
+                        required>
+                </div>
+
+                <fieldset>
+                    <legend>Gender</legend>
+
+                    <div class="radio-group">
+                        <input
+                            type="radio"
+                            id="female"
+                            name="gender"
+                            value="Female"
+                            required>
+                        <label for="female">Female</label>
+
+                        <input
+                            type="radio"
+                            id="male"
+                            name="gender"
+                            value="Male">
+                        <label for="male">Male</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="05XXXXXXXX"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date-of-birth">Date of Birth</label>
+                    <input
+                        type="date"
+                        id="date-of-birth"
+                        name="dateOfBirth"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="name@example.com"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">Preferred Language</label>
+
+                    <select id="language" name="preferredLanguage" required>
+                        <option value="">Select a language</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="English">English</option>
+                        <option value="French">French</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Send Message
+                </button>
+
+                <button type="reset" class="secondary-button">
+                    Clear
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CareerTrack. All rights reserved.</p>
+
+        <nav aria-label="Footer navigation">
+            <ul>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
