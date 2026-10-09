@@ -1,272 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Add, organize, search, and track internship and job applications with CareerTrack.">
-
-    <title>CareerTrack | Applications</title>
-
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications | CareerTrack</title>
+  
+  <!-- External Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="index.html" class="logo">CareerTrack</a>
+  <!-- Header Section -->
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M7.5 12.5l3 3 6-7"></path>
+        </svg>
+        CareerTrack
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="applications.html" class="active" aria-current="page">Applications</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </nav>
 
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="applications.html" aria-current="page">Applications</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
+      <a class="user" href="profile.html" aria-label="My profile">
+        <span class="avatar">R</span>
+        Riyam
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="container page">
+      
+      <div class="page-head">
+        <div>
+          <h1>My Applications</h1>
+          <p>Keep track of all your internship and job applications.</p>
+        </div>
+        <a class="btn" href="add-application.html">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 5v14M5 12h14"></path>
+          </svg>
+          Add Application
+        </a>
+      </div>
+
+      <!-- Table & Filters Section -->
+      <section class="card tcard">
+        
+        <div class="toolbar">
+          <div class="search">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-4-4"></path>
+            </svg>
+            <input type="search" placeholder="Search by company name..." aria-label="Search by company name">
+          </div>
+
+          <select aria-label="Status">
+            <option value="All">All Statuses</option>
+            <option value="Interview">Interview</option>
+            <option value="Applied">Applied</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Waiting">Waiting</option>
+          </select>
+
+          <select aria-label="Type">
+            <option value="All">All Types</option>
+            <option value="Internship">Internship</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Co-op">Co-op</option>
+          </select>
+        </div>
+
+        <div class="twrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Company</th>
+                <th scope="col">Position</th>
+                <th scope="col">Type</th>
+                <th scope="col">Applied</th>
+                <th scope="col">Interview</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#4285F4">G</span>Google</div></td>
+                <td>Software Engineering Intern</td>
+                <td>Internship</td>
+                <td>Oct 20, 2025</td>
+                <td>Oct 28, 2025</td>
+                <td><span class="badge interview">Interview</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#6D28D9">S</span>STC</div></td>
+                <td>SWE Intern</td>
+                <td>Internship</td>
+                <td>Oct 15, 2025</td>
+                <td>-</td>
+                <td><span class="badge applied">Applied</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#16A34A">A</span>Aramco</div></td>
+                <td>Co-op</td>
+                <td>Co-op</td>
+                <td>Oct 10, 2025</td>
+                <td>Oct 20, 2025</td>
+                <td><span class="badge offer">Offer</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#1D4ED8">S</span>SABIC</div></td>
+                <td>Software Engineer</td>
+                <td>Full-time</td>
+                <td>Sep 28, 2025</td>
+                <td>-</td>
+                <td><span class="badge rejected">Rejected</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#111827">N</span>NEOM</div></td>
+                <td>AI Intern</td>
+                <td>Internship</td>
+                <td>Sep 20, 2025</td>
+                <td>-</td>
+                <td><span class="badge waiting">Waiting</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#374151">A</span>Amazon</div></td>
+                <td>Backend Developer</td>
+                <td>Full-time</td>
+                <td>Sep 15, 2025</td>
+                <td>Sep 22, 2025</td>
+                <td><span class="badge interview">Interview</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#0EA5E9">M</span>Microsoft</div></td>
+                <td>Software Engineer</td>
+                <td>Full-time</td>
+                <td>Sep 10, 2025</td>
+                <td>-</td>
+                <td><span class="badge applied">Applied</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#1E40AF">A</span>Al Rajhi Bank</div></td>
+                <td>IT Intern</td>
+                <td>Internship</td>
+                <td>Sep 5, 2025</td>
+                <td>Sep 12, 2025</td>
+                <td><span class="badge rejected">Rejected</span></td>
+                <td><button class="more" aria-label="Actions">&#8943;</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <a href="#" aria-label="Previous">&lsaquo;</a>
+          <a class="on" href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" aria-label="Next">&rsaquo;</a>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <a class="logo" href="index.html">CareerTrack</a>
+          <p>Track every step toward your next opportunity.</p>
+        </div>
+        <nav aria-label="Footer Navigation">
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
-
-    <main>
-
-        <section class="page-header">
-            <h1>My Applications</h1>
-            <p>
-                Add and organize your internship and job applications in one place.
-            </p>
-        </section>
-
-        <!-- Add Application Form -->
-        <section class="application-form-section">
-            <h2>Add New Application</h2>
-
-            <form id="application-form" method="post">
-
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="position">Position</label>
-                    <input
-                        type="text"
-                        id="position"
-                        name="position"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="application-type">Application Type</label>
-
-                    <select id="application-type" name="type" required>
-                        <option value="">Select a type</option>
-                        <option value="Internship">Internship</option>
-                        <option value="Full-time">Full-time</option>
-                        <option value="Part-time">Part-time</option>
-                        <option value="Co-op">Co-op</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="application-date">Application Date</label>
-                    <input
-                        type="date"
-                        id="application-date"
-                        name="applicationDate"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="status">Status</label>
-
-                    <select id="status" name="status" required>
-                        <option value="">Select a status</option>
-                        <option value="Applied">Applied</option>
-                        <option value="Interview">Interview</option>
-                        <option value="Offer">Offer</option>
-                        <option value="Rejected">Rejected</option>
-                        <option value="Waiting">Waiting</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="interview-date">Interview Date</label>
-                    <input
-                        type="datetime-local"
-                        id="interview-date"
-                        name="interviewDate">
-                </div>
-
-                <div class="form-group">
-                    <label for="cv">Upload CV</label>
-                    <input
-                        type="file"
-                        id="cv"
-                        name="cv"
-                        accept=".pdf,.doc,.docx">
-                </div>
-
-                <div class="form-group">
-                    <label for="job-link">Job Link</label>
-                    <input
-                        type="url"
-                        id="job-link"
-                        name="jobLink"
-                        placeholder="https://example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="notes">Notes</label>
-                    <textarea
-                        id="notes"
-                        name="notes"
-                        rows="5"></textarea>
-                </div>
-
-                <button type="submit" class="primary-button">
-                    Add Application
-                </button>
-
-                <button type="reset" class="secondary-button">
-                    Clear
-                </button>
-
-            </form>
-        </section>
-
-        <!-- Search and Filter -->
-        <section class="search-filter-section">
-            <h2>Find an Application</h2>
-
-            <form id="search-filter-form">
-
-                <div class="form-group">
-                    <label for="search">Search by Company or Position</label>
-                    <input
-                        type="search"
-                        id="search"
-                        name="search"
-                        placeholder="Search applications">
-                </div>
-
-                <div class="form-group">
-                    <label for="filter-status">Filter by Status</label>
-
-                    <select id="filter-status" name="filterStatus">
-                        <option value="All">All Statuses</option>
-                        <option value="Applied">Applied</option>
-                        <option value="Interview">Interview</option>
-                        <option value="Offer">Offer</option>
-                        <option value="Rejected">Rejected</option>
-                        <option value="Waiting">Waiting</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="filter-type">Filter by Type</label>
-
-                    <select id="filter-type" name="filterType">
-                        <option value="All">All Types</option>
-                        <option value="Internship">Internship</option>
-                        <option value="Full-time">Full-time</option>
-                        <option value="Part-time">Part-time</option>
-                        <option value="Co-op">Co-op</option>
-                    </select>
-                </div>
-
-            </form>
-        </section>
-
-        <!-- Applications Table -->
-        <section class="applications-list">
-            <h2>Application List</h2>
-
-            <div class="table-container">
-                <table>
-                    <caption>Your saved internship and job applications</caption>
-
-                    <thead>
-                        <tr>
-                            <th scope="col">Company</th>
-                            <th scope="col">Position</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Interview</th>
-                            <th scope="col">Actions</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Example Company</td>
-                            <td>Software Intern</td>
-                            <td>Internship</td>
-                            <td>2026-10-01</td>
-                            <td>
-                                <span class="status applied">Applied</span>
-                            </td>
-                            <td>Not scheduled</td>
-                            <td>
-                                <button type="button" class="edit-button">
-                                    Edit
-                                </button>
-
-                                <button type="button" class="delete-button">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Sample Company</td>
-                            <td>Web Developer</td>
-                            <td>Full-time</td>
-                            <td>2026-10-03</td>
-                            <td>
-                                <span class="status interview">Interview</span>
-                            </td>
-                            <td>2026-10-12</td>
-                            <td>
-                                <button type="button" class="edit-button">
-                                    Edit
-                                </button>
-
-                                <button type="button" class="delete-button">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p class="phase-note">
-                Application management features will become interactive in the next
-                development phase.
-            </p>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 CareerTrack. All rights reserved.</p>
-
-        <nav aria-label="Footer navigation">
-            <ul>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </footer>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 8l-4 4 4 4M16 8l4 4-4 4"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="copy">&copy; 2025 CareerTrack. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>

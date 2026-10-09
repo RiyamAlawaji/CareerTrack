@@ -1,139 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="CareerTrack helps students and graduates organize and track their internship and job applications.">
-
-    <title>CareerTrack | Home</title>
-
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | CareerTrack</title>
+  
+  <!-- External Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="index.html" class="logo">CareerTrack</a>
+  <!-- Header Section -->
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M7.5 12.5l3 3 6-7"></path>
+        </svg>
+        CareerTrack
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="links">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </nav>
 
-            <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="applications.html">Applications</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+      <a class="login-btn" href="profile.html">Login</a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h1>Track every step toward your next opportunity.</h1>
+          <p>Organize your internships and job applications in one place. Stay updated, never miss an interview, and build your future with confidence.</p>
+          <a class="btn" href="applications.html">
+            <span>Start Tracking</span>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="illus" aria-hidden="true">
+          <div class="blob"></div>
+          <div class="laptop-frame">
+            <div class="screen">
+              <div class="screen-header">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="screen-body">
+                <div class="mock-sidebar"></div>
+                <div class="mock-content">
+                  <div class="mock-line"></div>
+                  <div class="mock-line short"></div>
+                  <div class="mock-grid">
+                    <div></div><div></div><div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
+          
+          <div class="float-tags">
+            <span class="tag applied"><i class="dot"></i> Applied</span>
+            <span class="tag interview"><i class="dot"></i> Interview</span>
+            <span class="tag offer"><i class="dot"></i> Offer</span>
+            <span class="tag rejected"><i class="dot"></i> Rejected</span>
+            <span class="tag waiting"><i class="dot"></i> Waiting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features & Tips Container -->
+    <div class="container page">
+      
+      <!-- Features 3 Cards Grid -->
+      <section class="features">
+        <article class="card">
+          <div class="chip">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"></path>
+              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path>
+            </svg>
+          </div>
+          <h3>Track Internships &amp; Jobs</h3>
+          <p>Keep all your applications in one place and follow their progress.</p>
+        </article>
+
+        <article class="card">
+          <div class="chip">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <h3>Upload Your CV</h3>
+          <p>Use the right version of your CV for each application.</p>
+        </article>
+
+        <article class="card">
+          <div class="chip teal">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>See the Big Picture</h3>
+          <p>Get insights with your stats and track your progress.</p>
+        </article>
+      </section>
+
+      <!-- Application Tips Section -->
+      <section class="card panel-tips">
+        <div class="tips-header">
+          <h2>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 11c.7.6 1 1.3 1 2h5c0-.7.3-1.4 1-2A6 6 0 0012 3z"></path>
+            </svg>
+            Application Tips
+          </h2>
+        </div>
+
+        <div class="tips-content">
+          <div class="tip-col">
+            <h3>For Students</h3>
+            <ul class="ticks">
+              <li>Apply early, especially for summer and co-op programs.</li>
+              <li>Tailor your CV for each role.</li>
+              <li>Follow up politely after interviews.</li>
             </ul>
+          </div>
+
+          <div class="tip-col">
+            <h3>For Graduates</h3>
+            <ul class="ticks">
+              <li>Highlight your projects and skills.</li>
+              <li>Use your network and LinkedIn.</li>
+              <li>Keep track of your applications and interview dates.</li>
+            </ul>
+          </div>
+
+          <div class="tip-handwriting">
+            <p class="hand">Small steps<br>lead to big<br>opportunities. <span>➔</span></p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <a class="logo" href="index.html">CareerTrack</a>
+          <p>Track every step toward your next opportunity.</p>
+        </div>
+
+        <nav aria-label="Footer Navigation">
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <p class="hero-label">Your Career Journey, Organized</p>
-
-                <h1>Track every step toward your next opportunity.</h1>
-
-                <p>
-                    CareerTrack is a personal internship and job application tracker
-                    designed to help students and graduates organize their applications,
-                    monitor their progress, keep track of interview dates, and manage
-                    the CV used for each application.
-                </p>
-
-                <a href="applications.html" class="primary-button">
-                    Start Tracking
-                </a>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features">
-            <div class="section-heading">
-                <h2>Everything You Need in One Place</h2>
-
-                <p>
-                    Keep your application journey organized without relying on
-                    scattered notes, messages, or files.
-                </p>
-            </div>
-
-            <div class="feature-container">
-
-                <article class="feature-card">
-                    <h3>Track Applications</h3>
-                    <p>
-                        Add your internship and job applications and keep track of
-                        their current status in one organized place.
-                    </p>
-                </article>
-
-                <article class="feature-card">
-                    <h3>Interview Dates</h3>
-                    <p>
-                        Record interview dates for your applications so important
-                        opportunities are easier to follow.
-                    </p>
-                </article>
-
-                <article class="feature-card">
-                    <h3>CV Management</h3>
-                    <p>
-                        Keep track of the CV used for each application to make your
-                        application records easier to manage.
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Application Tips -->
-        <aside class="tips">
-            <h2>Application Tips</h2>
-
-            <ul>
-                <li>Keep your application status updated.</li>
-                <li>Record interview dates as soon as they are scheduled.</li>
-                <li>Keep your CV organized for each opportunity.</li>
-                <li>Review your applications regularly to monitor your progress.</li>
-            </ul>
-        </aside>
-
-        <!-- Call to Action -->
-        <section class="call-to-action">
-            <h2>Ready to organize your applications?</h2>
-
-            <p>
-                Start tracking your internship and job applications with CareerTrack.
-            </p>
-
-            <a href="applications.html" class="primary-button">
-                View My Applications
-            </a>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>
-            &copy; 2026 CareerTrack. All rights reserved.
-        </p>
-
-        <nav aria-label="Footer navigation">
-            <ul>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </footer>
+        <div class="social" aria-label="Social links">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12l3 3 5-5"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="copy">&copy; 2025 CareerTrack. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>

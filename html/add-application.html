@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Application | CareerTrack</title>
+  
+  <!-- External Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M7.5 12.5l3 3 6-7"></path>
+        </svg>
+        CareerTrack
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="applications.html" class="active" aria-current="page">Applications</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="user" href="profile.html" aria-label="My profile">
+        <span class="avatar">R</span>
+        Riyam
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="container page">
+      
+      <div class="page-head">
+        <div>
+          <h1>Add New Application</h1>
+          <p>Fill in the details of your application.</p>
+        </div>
+      </div>
+
+      <div class="two">
+        
+        <!-- Application Form -->
+        <form id="appForm" class="card" action="applications.html" method="get">
+          <ol class="stepper">
+            <li class="active"><b>1</b><span>Job Information</span></li>
+            <li><b>2</b><span>Application Details</span></li>
+            <li><b>3</b><span>Documents</span></li>
+            <li><b>4</b><span>Notes</span></li>
+          </ol>
+
+          <!-- Step 1: Job Information -->
+          <fieldset class="step">
+            <legend>Job Information</legend>
+            <div class="fgrid">
+              <div class="full">
+                <label for="company">Company <i>*</i></label>
+                <input type="text" id="company" name="company" placeholder="e.g. Google" required>
+              </div>
+              <div class="full">
+                <label for="position">Position <i>*</i></label>
+                <input type="text" id="position" name="position" placeholder="e.g. Software Engineer" required>
+              </div>
+              <div class="full">
+                <label for="type">Type <i>*</i></label>
+                <select id="type" name="type" required>
+                  <option value="">Select type</option>
+                  <option value="Internship">Internship</option>
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Co-op">Co-op</option>
+                </select>
+              </div>
+              <div>
+                <label for="date">Application Date <i>*</i></label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div>
+                <label for="link">Job Link <small>(optional)</small></label>
+                <input type="url" id="link" name="link" placeholder="https://">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 2: Application Details -->
+          <fieldset class="step" hidden>
+            <legend>Application Details</legend>
+            <div class="fgrid">
+              <div>
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                  <option value="Interview">Interview</option>
+                  <option value="Applied">Applied</option>
+                  <option value="Offer">Offer</option>
+                  <option value="Rejected">Rejected</option>
+                  <option value="Waiting">Waiting</option>
+                </select>
+              </div>
+              <div>
+                <label for="interview">Interview Date &amp; Time</label>
+                <input type="datetime-local" id="interview" name="interview">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 3: Documents -->
+          <fieldset class="step" hidden>
+            <legend>Documents</legend>
+            <label for="cv">Upload your CV</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+          </fieldset>
+
+          <!-- Step 4: Notes -->
+          <fieldset class="step" hidden>
+            <legend>Notes</legend>
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" placeholder="Anything worth remembering about this application"></textarea>
+          </fieldset>
+
+          <div class="actions">
+            <button type="button" class="btn btn-line" id="back">Cancel</button>
+            <button type="button" class="btn" id="next">
+              <span>Next</span>
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Sidebar Panel -->
+        <aside class="panel">
+          <h2>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 11c.7.6 1 1.3 1 2h5c0-.7.3-1.4 1-2A6 6 0 0012 3z"></path>
+            </svg>
+            Quick Tips
+          </h2>
+          <ul class="ticks">
+            <li>Use the exact company name as it appears on their website.</li>
+            <li>Make sure to select the correct application type.</li>
+            <li>Keep your notes updated with any important details.</li>
+          </ul>
+          <p class="hand" style="margin-top: 20px">You got this!</p>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <a class="logo" href="index.html">CareerTrack</a>
+          <p>Track every step toward your next opportunity.</p>
+        </div>
+        <nav aria-label="Footer Navigation">
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 8l-4 4 4 4M16 8l4 4-4 4"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="copy">&copy; 2025 CareerTrack. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/steps.js"></script>
+</body>
+</html>

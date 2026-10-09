@@ -1,157 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="View an overview of your internship and job application progress with CareerTrack.">
-
-    <title>CareerTrack | Dashboard</title>
-
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | CareerTrack</title>
+  
+  <!-- External Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
 
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="index.html" class="logo">CareerTrack</a>
+  <!-- Header Section -->
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M7.5 12.5l3 3 6-7"></path>
+        </svg>
+        CareerTrack
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="dashboard.html" class="active" aria-current="page">Dashboard</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </nav>
 
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="applications.html">Applications</a></li>
-                <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
+      <a class="user" href="profile.html" aria-label="My profile">
+        <span class="avatar">R</span>
+        Riyam
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="container page">
+      
+      <div class="greet">
+        <div>
+          <h1>Good morning, Riyam! &#128075;</h1>
+          <p class="muted">Here's your application progress.</p>
+        </div>
+        <div class="date">
+          Oct 26, 2025
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18v16H3zM3 10h18M8 3v4M16 3v4"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Stats Grid Section -->
+      <section class="stats">
+        <div class="card stat">
+          <div class="chip" style="--c:#0E8F87;--c-bg:#D8F5F2">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>24</strong>
+            <span>Total Applications</span>
+          </div>
+        </div>
+
+        <div class="card stat">
+          <div class="chip" style="--c:#3B4CCA;--c-bg:#E3EBFF">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="9" cy="8" r="3.5"></circle>
+              <path d="M2 20c0-4 3-6 7-6s7 2 7 6M17 5a3.5 3.5 0 010 7M22 20c0-3-2-5-5-5.5"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>6</strong>
+            <span>Interviews</span>
+          </div>
+        </div>
+
+        <div class="card stat">
+          <div class="chip" style="--c:#15803D;--c-bg:#D8F5E3">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M8 12l3 3 5-6"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Offers</span>
+          </div>
+        </div>
+
+        <div class="card stat">
+          <div class="chip" style="--c:#DC2626;--c-bg:#FFE1E4">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M9 9l6 6M15 9l-6 6"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>8</strong>
+            <span>Rejected</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Charts Area -->
+      <div class="dash">
+        <section class="card">
+          <div class="card-top" style="padding: 0">
+            <h2>Applications Overview</h2>
+            <select aria-label="Period">
+              <option>Last 6 months</option>
+            </select>
+          </div>
+
+          <svg class="chart" viewBox="0 0 520 200" role="img" aria-label="Applications per month">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3B4CCA" stop-opacity=".18"></stop>
+                <stop offset="1" stop-color="#3B4CCA" stop-opacity="0"></stop>
+              </linearGradient>
+            </defs>
+            <line x1="45" x2="515" y1="170" y2="170" stroke="#E6EAF3"></line>
+            <text x="32" y="174" text-anchor="end" font-size="10" fill="#667085">0</text>
+            <line x1="45" x2="515" y1="132" y2="132" stroke="#E6EAF3"></line>
+            <text x="32" y="136" text-anchor="end" font-size="10" fill="#667085">5</text>
+            <line x1="45" x2="515" y1="95" y2="95" stroke="#E6EAF3"></line>
+            <text x="32" y="99" text-anchor="end" font-size="10" fill="#667085">10</text>
+            <line x1="45" x2="515" y1="57" y2="57" stroke="#E6EAF3"></line>
+            <text x="32" y="61" text-anchor="end" font-size="10" fill="#667085">15</text>
+            <line x1="45" x2="515" y1="20" y2="20" stroke="#E6EAF3"></line>
+            <text x="32" y="24" text-anchor="end" font-size="10" fill="#667085">20</text>
+            <text x="60" y="190" text-anchor="middle" font-size="10" fill="#667085">May</text>
+            <text x="150" y="190" text-anchor="middle" font-size="10" fill="#667085">Jun</text>
+            <text x="240" y="190" text-anchor="middle" font-size="10" fill="#667085">Jul</text>
+            <text x="330" y="190" text-anchor="middle" font-size="10" fill="#667085">Aug</text>
+            <text x="420" y="190" text-anchor="middle" font-size="10" fill="#667085">Sep</text>
+            <text x="510" y="190" text-anchor="middle" font-size="10" fill="#667085">Oct</text>
+            <polygon points="60,170 60,140 150,80 240,102 330,72 420,95 510,80 510,170" fill="url(#g)"></polygon>
+            <polyline points="60,140 150,80 240,102 330,72 420,95 510,80" fill="none" stroke="#3B4CCA" stroke-width="2.5"></polyline>
+            <polyline points="60,155 150,132 240,95 330,117 420,102 510,87" fill="none" stroke="#14B8A6" stroke-width="2.5"></polyline>
+          </svg>
+
+          <div class="legend">
+            <span><i class="dot" style="--c:#3B4CCA"></i>Internships</span>
+            <span><i class="dot" style="--c:#14B8A6"></i>Jobs</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Internship vs. Jobs</h2>
+          <div class="donut-row">
+            <div class="donut" role="img" aria-label="60 percent internships, 40 percent jobs">
+              <div>
+                <span><strong>24</strong>Total</span>
+              </div>
+            </div>
+            <div>
+              <p><i class="dot" style="--c:#3B4CCA"></i>Internships<small>60% (14)</small></p>
+              <p><i class="dot" style="--c:#14B8A6"></i>Jobs<small>40% (10)</small></p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Table Section -->
+      <section class="card tcard">
+        <div class="card-top">
+          <h2>Latest Applications</h2>
+          <a class="viewall" href="applications.html">View all &rarr;</a>
+        </div>
+
+        <div class="twrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Company</th>
+                <th scope="col">Position</th>
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#4285F4">G</span>Google</div></td>
+                <td>Software Engineering Intern</td>
+                <td>Internship</td>
+                <td>Oct 20, 2025</td>
+                <td><span class="badge interview">Interview</span></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#6D28D9">S</span>STC</div></td>
+                <td>SWE Intern</td>
+                <td>Internship</td>
+                <td>Oct 15, 2025</td>
+                <td><span class="badge applied">Applied</span></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#16A34A">A</span>Aramco</div></td>
+                <td>Co-op</td>
+                <td>Co-op</td>
+                <td>Oct 10, 2025</td>
+                <td><span class="badge offer">Offer</span></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#1D4ED8">S</span>SABIC</div></td>
+                <td>Software Engineer</td>
+                <td>Full-time</td>
+                <td>Sep 28, 2025</td>
+                <td><span class="badge rejected">Rejected</span></td>
+              </tr>
+              <tr>
+                <td><div class="co"><span class="logo-sq" style="--c:#111827">N</span>NEOM</div></td>
+                <td>AI Intern</td>
+                <td>Internship</td>
+                <td>Sep 20, 2025</td>
+                <td><span class="badge waiting">Waiting</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <a class="logo" href="index.html">CareerTrack</a>
+          <p>Track every step toward your next opportunity.</p>
+        </div>
+        <nav aria-label="Footer Navigation">
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
-
-    <main>
-
-        <section class="page-header">
-            <h1>Dashboard</h1>
-            <p>
-                Get a quick overview of your internship and job application progress.
-            </p>
-        </section>
-
-        <!-- Statistics -->
-        <section class="dashboard-summary">
-            <h2>Application Overview</h2>
-
-            <div class="stat-container">
-
-                <article class="stat-card">
-                    <h3>Total Applications</h3>
-                    <p class="stat-number">24</p>
-                </article>
-
-                <article class="stat-card">
-                    <h3>Interviews</h3>
-                    <p class="stat-number">5</p>
-                </article>
-
-                <article class="stat-card">
-                    <h3>Offers</h3>
-                    <p class="stat-number">1</p>
-                </article>
-
-                <article class="stat-card">
-                    <h3>Rejected</h3>
-                    <p class="stat-number">3</p>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Application Types -->
-        <section class="application-types">
-            <h2>Applications by Type</h2>
-
-            <div class="type-container">
-
-                <article class="type-card">
-                    <h3>Internships</h3>
-                    <p class="stat-number">14</p>
-                </article>
-
-                <article class="type-card">
-                    <h3>Jobs</h3>
-                    <p class="stat-number">10</p>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Recent Applications -->
-        <section class="recent-applications">
-            <h2>Latest Applications</h2>
-
-            <div class="table-container">
-                <table>
-                    <caption>Your most recent applications</caption>
-
-                    <thead>
-                        <tr>
-                            <th scope="col">Company</th>
-                            <th scope="col">Position</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Status</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Example Company</td>
-                            <td>Software Intern</td>
-                            <td>Internship</td>
-                            <td>
-                                <span class="status applied">Applied</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Sample Company</td>
-                            <td>Web Developer</td>
-                            <td>Full-time</td>
-                            <td>
-                                <span class="status interview">Interview</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Demo Company</td>
-                            <td>Frontend Developer</td>
-                            <td>Full-time</td>
-                            <td>
-                                <span class="status waiting">Waiting</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <a href="applications.html" class="primary-button">
-                View All Applications
-            </a>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 CareerTrack. All rights reserved.</p>
-
-        <nav aria-label="Footer navigation">
-            <ul>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </footer>
+        <div class="social" aria-label="Social links">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 8l-4 4 4 4M16 8l4 4-4 4"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="copy">&copy; 2025 CareerTrack. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>
