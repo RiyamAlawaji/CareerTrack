@@ -62,8 +62,11 @@ img {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
   font-weight: 700;
-  font-size: 1.1rem
+  font-size: 1.15rem
 }
 
 .site-header nav ul {
@@ -218,7 +221,7 @@ main {
   position: relative;
   flex: 0 0 390px;
   height: 240px;
-  margin-right: 15rem
+  margin-right: 5rem
 }
 
 .blob {
@@ -805,68 +808,13 @@ textarea:focus {
   font-size: .75rem
 }
 
-/* responsive */
-@media screen and (max-width:768px) {
-  .site-header {
-    flex-wrap: wrap;
-    padding: .8rem 1rem
-  }
-
-  main {
-    padding: 1.5rem 1rem
-  }
-
-  .site-footer {
-    padding: 1.5rem 1rem
-  }
-
-  .site-header nav ul {
-    flex-wrap: wrap;
-    gap: .8rem
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center
-  }
-
-  .hero-art {
-    flex: none;
-    width: 100%;
-    margin-right: 0
-  }
-
-  .grid-2,
-  .grid-3,
-  .grid-4,
-  .team,
-  .project,
-  .contact-layout,
-  .form-grid,
-  .tips .grid-2 {
-    grid-template-columns: 1fr
-  }
-
-  .steps {
-    gap: .8rem;
-    flex-wrap: wrap
-  }
-
-  .filters {
-    flex-direction: column
-  }
-
-  .page-head {
-    flex-direction: column
-  }
-}
 
 /* dashboard extras */
 .card-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: .10rem
+  margin-bottom: .5rem
 }
 
 .card-head h2,
@@ -1021,4 +969,252 @@ textarea:focus {
 
 .breakdown b {
   text-align: right
+}
+
+/* color helpers (replace inline styles) */
+.dot-applied {
+  --c: #f5a623
+}
+
+.dot-interview {
+  --c: #3a82f7
+}
+
+.dot-offer {
+  --c: #8e5be8
+}
+
+.dot-rejected {
+  --c: #e5484d
+}
+
+.dot-waiting {
+  --c: #f2c94c
+}
+
+.dot-teal {
+  --c: #12a38f
+}
+
+.dot-indigo {
+  --c: #3a35c9
+}
+
+.bar-applied {
+  background: #f5a623
+}
+
+.bar-interview {
+  background: #3a82f7
+}
+
+.bar-offer {
+  background: #8e5be8
+}
+
+.bar-rejected {
+  background: #e5484d
+}
+
+.bar-waiting {
+  background: #f2c94c
+}
+
+.w-38 {
+  width: 38%
+}
+
+.w-50 {
+  width: 50%
+}
+
+.w-75 {
+  width: 75%
+}
+
+.w-100 {
+  width: 100%
+}
+
+.brand-google {
+  background: #4285f4
+}
+
+.brand-stc {
+  background: #6a2c91
+}
+
+.brand-aramco {
+  background: #00a3e0
+}
+
+.brand-sabic {
+  background: #0b5fa5
+}
+
+.brand-neom {
+  background: #1f2a44
+}
+
+.brand-amazon {
+  background: #ff9900
+}
+
+.brand-microsoft {
+  background: #7fba00
+}
+
+.brand-alrajhi {
+  background: #1b5e9b
+}
+
+.sprite {
+  position: absolute
+}
+
+.team-table caption {
+  font-size: 1.1rem
+}
+
+.team-table th[scope="row"] {
+  color: var(--text);
+  font-size: .9rem
+}
+
+.team-table tfoot td {
+  color: var(--muted);
+  font-size: .8rem;
+  border-bottom: 0
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--indigo)
+}
+
+.social-link:hover {
+  text-decoration: underline
+}
+
+/* responsive: 992px / 768px / 576px */
+@media screen and (max-width:992px) {
+
+  .site-header,
+  .site-footer {
+    padding-left: 2rem;
+    padding-right: 2rem
+  }
+
+  main {
+    padding: 1.5rem 2rem
+  }
+
+  .grid-2,
+  .project,
+  .contact-layout {
+    grid-template-columns: 1fr
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .tips .grid-2 {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .hero-art {
+    margin-right: 0
+  }
+}
+
+@media screen and (max-width:768px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: .6rem
+  }
+
+  .site-header nav ul {
+    flex-wrap: wrap;
+    gap: .8rem
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center
+  }
+
+  .hero-text {
+    max-width: none
+  }
+
+  .hero-art {
+    flex: none;
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr
+  }
+
+  .page-head {
+    flex-direction: column
+  }
+
+  .steps {
+    gap: .8rem;
+    flex-wrap: wrap
+  }
+
+  .filters {
+    flex-direction: column
+  }
+
+  .tips .grid-2 {
+    grid-template-columns: 1fr
+  }
+
+  .note {
+    text-align: left;
+    transform: none
+  }
+}
+
+@media screen and (max-width:576px) {
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr
+  }
+
+  main {
+    padding: 1rem
+  }
+
+  .site-header,
+  .site-footer {
+    padding-left: 1rem;
+    padding-right: 1rem
+  }
+
+  .hero h1 {
+    font-size: 1.7rem
+  }
+
+  .donut-wrap {
+    flex-direction: column
+  }
+
+  .site-footer {
+    flex-direction: column
+  }
+
+  .site-footer ul {
+    flex-wrap: wrap
+  }
 }

@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CareerTrack | My Applications</title>
+  <link rel="icon" href="../media/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="Home.html">🧭 CareerTrack</a>
+    <a class="logo" href="Home.html"><img src="../media/logo.svg" alt="" width="32" height="32">CareerTrack</a>
     <nav><ul><li><a href="Home.html">Home</a></li><li><a href="applications.html" class="active">Applications</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="about-us.html">About Us</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
-    <a class="user" href="profile.html"><span class="avatar">R</span>Riyam</a>
+    <a class="user" href="profile.html"><span class="avatar">U</span>User</a>
   </header>
   <main>
     <div class="page-head"><div><h1>My Applications</h1><p class="muted">Keep track of all your internship and job applications.</p></div><a class="btn" href="add-application.html">+ Add Application</a></div>
     <section class="card">
       <form class="filters" action="#" method="get">
-        <input type="search" name="q" placeholder="Search by company name..." aria-label="Search by company name">
+        <input type="search" name="q" maxlength="50" placeholder="Search by company name..." aria-label="Search by company name">
         <select name="status" aria-label="Status"><option>All Statuses</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option><option>Waiting</option></select>
         <select name="type" aria-label="Type"><option>All Types</option><option>Internship</option><option>Co-op</option><option>Full-time</option></select>
       </form>
@@ -24,14 +25,14 @@
         <table>
           <thead><tr><th>Company</th><th>Position</th><th>Type</th><th>Applied</th><th>Interview</th><th>Status</th><th>Actions</th></tr></thead>
           <tbody>
-<tr><td><span class="logo-ico" style="background:#4285f4" aria-hidden="true">G</span>Google</td><td>Software Engineering Intern</td><td>Internship</td><td>Oct 20, 2025</td><td>Oct 28, 2025</td><td><span class="badge interview">Interview</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#6a2c91" aria-hidden="true">S</span>STC</td><td>SWE Intern</td><td>Internship</td><td>Oct 15, 2025</td><td>-</td><td><span class="badge applied">Applied</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#00a3e0" aria-hidden="true">A</span>Aramco</td><td>Co-op</td><td>Co-op</td><td>Oct 10, 2025</td><td>Oct 20, 2025</td><td><span class="badge offer">Offer</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#0b5fa5" aria-hidden="true">S</span>SABIC</td><td>Software Engineer</td><td>Full-time</td><td>Sep 28, 2025</td><td>-</td><td><span class="badge rejected">Rejected</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#1f2a44" aria-hidden="true">N</span>NEOM</td><td>AI Intern</td><td>Internship</td><td>Sep 20, 2025</td><td>-</td><td><span class="badge waiting">Waiting</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#ff9900" aria-hidden="true">A</span>Amazon</td><td>Backend Developer</td><td>Full-time</td><td>Sep 15, 2025</td><td>Sep 22, 2025</td><td><span class="badge interview">Interview</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#7fba00" aria-hidden="true">M</span>Microsoft</td><td>Software Engineer</td><td>Full-time</td><td>Sep 10, 2025</td><td>-</td><td><span class="badge applied">Applied</span></td><td>⋯</td></tr>
-<tr><td><span class="logo-ico" style="background:#1b5e9b" aria-hidden="true">A</span>Al Rajhi Bank</td><td>IT Intern</td><td>Internship</td><td>Sep 5, 2025</td><td>Sep 12, 2025</td><td><span class="badge rejected">Rejected</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-google" aria-hidden="true">G</span>Google</td><td>Software Engineering Intern</td><td>Internship</td><td>Oct 20, 2025</td><td>Oct 28, 2025</td><td><span class="badge interview">Interview</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-stc" aria-hidden="true">S</span>STC</td><td>SWE Intern</td><td>Internship</td><td>Oct 15, 2025</td><td>-</td><td><span class="badge applied">Applied</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-aramco" aria-hidden="true">A</span>Aramco</td><td>Co-op</td><td>Co-op</td><td>Oct 10, 2025</td><td>Oct 20, 2025</td><td><span class="badge offer">Offer</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-sabic" aria-hidden="true">S</span>SABIC</td><td>Software Engineer</td><td>Full-time</td><td>Sep 28, 2025</td><td>-</td><td><span class="badge rejected">Rejected</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-neom" aria-hidden="true">N</span>NEOM</td><td>AI Intern</td><td>Internship</td><td>Sep 20, 2025</td><td>-</td><td><span class="badge waiting">Waiting</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-amazon" aria-hidden="true">A</span>Amazon</td><td>Backend Developer</td><td>Full-time</td><td>Sep 15, 2025</td><td>Sep 22, 2025</td><td><span class="badge interview">Interview</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-microsoft" aria-hidden="true">M</span>Microsoft</td><td>Software Engineer</td><td>Full-time</td><td>Sep 10, 2025</td><td>-</td><td><span class="badge applied">Applied</span></td><td>⋯</td></tr>
+<tr><td><span class="logo-ico brand-alrajhi" aria-hidden="true">A</span>Al Rajhi Bank</td><td>IT Intern</td><td>Internship</td><td>Sep 5, 2025</td><td>Sep 12, 2025</td><td><span class="badge rejected">Rejected</span></td><td>⋯</td></tr>
           </tbody>
         </table>
       </div>
