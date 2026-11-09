@@ -14,7 +14,7 @@
     <a class="user" href="profile.html"><span class="avatar">U</span>User</a>
   </header>
   <main>
-    <div class="page-head"><div><h1>Good morning, Riyam! 👋</h1><p class="muted">Here's your application progress.</p></div><p class="muted">Oct 26, 2025 📅</p></div>
+    <div class="page-head"><div><h1>Good morning, Riyam! 👋</h1><p class="muted">Here's your application progress.</p></div><p class="muted" id="dashboardDate"></p></div>
     <section class="grid-4"><div class="card stat"><span class="icon c-teal">📋</span><div><strong>24</strong><span class="muted">Total Applications</span></div></div><div class="card stat"><span class="icon c-blue">👥</span><div><strong>6</strong><span class="muted">Interviews</span></div></div><div class="card stat"><span class="icon c-green">🎁</span><div><strong>3</strong><span class="muted">Offers</span></div></div><div class="card stat"><span class="icon c-red">✖</span><div><strong>8</strong><span class="muted">Rejected</span></div></div></section>
     <section class="grid-2">
       <article class="card">
@@ -36,13 +36,7 @@
       <table>
         <caption>Latest Applications <a class="view-all" href="applications.html">View all →</a></caption>
         <thead><tr><th>Company</th><th>Position</th><th>Type</th><th>Date</th><th>Status</th></tr></thead>
-        <tbody>
-<tr><td><span class="logo-ico brand-google" aria-hidden="true">G</span>Google</td><td>Software Engineering Intern</td><td>Internship</td><td>Oct 20, 2025</td><td><span class="badge interview">Interview</span></td></tr>
-<tr><td><span class="logo-ico brand-stc" aria-hidden="true">S</span>STC</td><td>SWE Intern</td><td>Internship</td><td>Oct 15, 2025</td><td><span class="badge applied">Applied</span></td></tr>
-<tr><td><span class="logo-ico brand-aramco" aria-hidden="true">A</span>Aramco</td><td>Co-op</td><td>Co-op</td><td>Oct 10, 2025</td><td><span class="badge offer">Offer</span></td></tr>
-<tr><td><span class="logo-ico brand-sabic" aria-hidden="true">S</span>SABIC</td><td>Software Engineer</td><td>Full-time</td><td>Sep 28, 2025</td><td><span class="badge rejected">Rejected</span></td></tr>
-<tr><td><span class="logo-ico brand-neom" aria-hidden="true">N</span>NEOM</td><td>AI Intern</td><td>Internship</td><td>Sep 20, 2025</td><td><span class="badge waiting">Waiting</span></td></tr>
-        </tbody>
+       <tbody id="latestApplications"></tbody>
       </table>
     </section>
   </main>
@@ -51,5 +45,6 @@
     <nav><ul><li><a href="Home.html">Home</a></li><li><a href="applications.html">Applications</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="about-us.html">About Us</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
     <p class="copy">© 2025 CareerTrack. All rights reserved.</p>
   </footer>
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>

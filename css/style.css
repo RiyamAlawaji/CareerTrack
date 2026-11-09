@@ -1217,4 +1217,33 @@ textarea:focus {
   .site-footer ul {
     flex-wrap: wrap
   }
+  .pagination button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #dfe5ef;
+    border-radius: 8px;
+    background: white;
+    color: #202b65;
+    font: inherit;
+    cursor: pointer;
+}
+
+.pagination button.current {
+    background: #3a35c9;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.pagination[hidden] {
+    display: none;
+}
+
 }
