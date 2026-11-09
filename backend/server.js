@@ -345,39 +345,159 @@ app.get("/api/applications/:id/cv", function (req, res) {
         }
     );
 });
-// View uploaded CV
-app.get("/api/applications/:id/cv", function (req, res) {
 
-    const id = Number(req.params.id);
+// Create uploads folder if it doesn't exist
+const profileUploads = path.join(__dirname, "uploads", "profiles");
 
-    if (!Number.isSafeInteger(id) || id <= 0) {
-        return res.status(400).send("Invalid application ID.");
+fs.mkdirSync(profileUploads, { recursive: true });
+
+// Configure CV uploads
+const profileStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, profileUploads);
+    },
+
+    filename: function (req, file, cb) {
+        const extension = path.extname(file.originalname).toLowerCase();
+
+        cb(null, crypto.randomUUID() + extension);
     }
+});
 
-    const sql = "SELECT cv_filename FROM applications WHERE id = ?";
+const uploadProfileCV = multer({
+    storage: profileStorage,
 
-    db.query(sql, [id], function (err, results) {
+    limits: {
+        fileSize: 5 * 1024 * 1024
+    },
 
-        if (err) {
-            console.error("Error loading CV:", err.message);
-            return res.status(500).send("Failed to load CV.");
+    fileFilter: function (req, file, cb) {
+        const extension = path.extname(file.originalname).toLowerCase();
+
+        if (extension !== ".pdf") {
+            return cb(new Error("Only PDF files are allowed."));
         }
 
-        if (results.length === 0 || !results[0].cv_filename) {
-            return res.status(404).send("CV not found.");
-        }
+        cb(null, true);
+    }
+});
 
-        const filename = path.basename(results[0].cv_filename);
-        const filePath = path.join(__dirname, "uploads", filename);
+// Get profile
+app.get("/api/profile", function (req, res) {
 
-        res.sendFile(filePath, function (fileError) {
-            if (fileError) {
-                console.error("Error opening CV:", fileError.message);
+    db.query(
+        "SELECT * FROM profiles WHERE id = 1",
+        function (err, results) {
+
+            if (err) {
+                console.error(err);
+
+                return res.status(500).json({
+                    success: false,
+                    message: "Failed to load profile."
+                });
             }
-        });
 
+            res.json({
+                success: true,
+                profile: results[0] || null
+            });
+        }
+    );
+});
+
+// Save or update profile
+app.post("/api/profile", function (req, res) {
+
+    uploadProfileCV.single("cv")(req, res, function (uploadError) {
+
+        if (uploadError) {
+            return res.status(400).json({
+                success: false,
+                message: uploadError.message
+            });
+        }
+
+        const { name, email, uni } = req.body;
+
+        if (
+            !name ||
+            !email ||
+            name.trim().length > 60 ||
+            email.trim().length > 100 ||
+            (uni && uni.length > 100)
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Please enter valid profile information."
+            });
+        }
+
+        const newCV = req.file ? req.file.filename : null;
+
+        const sql = `
+            INSERT INTO profiles
+                (id, full_name, email, university, cv_filename)
+            VALUES
+                (1, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE
+                full_name = VALUES(full_name),
+                email = VALUES(email),
+                university = VALUES(university),
+                cv_filename = COALESCE(
+                    VALUES(cv_filename),
+                    cv_filename
+                )
+        `;
+
+        db.query(
+            sql,
+            [
+                name.trim(),
+                email.trim(),
+                uni || null,
+                newCV
+            ],
+            function (err) {
+
+                if (err) {
+                    console.error(err);
+
+                    return res.status(500).json({
+                        success: false,
+                        message: "Failed to save profile."
+                    });
+                }
+
+                res.json({
+                    success: true,
+                    message: "Profile saved successfully!"
+                });
+            }
+        );
     });
+});
 
+// Download profile CV
+app.get("/api/profile/cv", function (req, res) {
+
+    db.query(
+        "SELECT cv_filename FROM profiles WHERE id = 1",
+        function (err, results) {
+
+            if (err) {
+                return res.status(500).send("Database error.");
+            }
+
+            if (!results.length || !results[0].cv_filename) {
+                return res.status(404).send("CV not found.");
+            }
+
+            const filename = path.basename(results[0].cv_filename);
+
+            res.download(path.join(profileUploads, filename));
+        }
+    );
 });
 // Start server
 app.listen(PORT, function () {
