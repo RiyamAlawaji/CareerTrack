@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CareerTrack | Profile</title>
+  <link rel="icon" href="../media/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="Home.html">🧭 CareerTrack</a>
+    <a class="logo" href="Home.html"><img src="../media/logo.svg" alt="" width="32" height="32">CareerTrack</a>
     <nav><ul><li><a href="Home.html">Home</a></li><li><a href="applications.html">Applications</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="about-us.html">About Us</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
-    <a class="user" href="profile.html"><span class="avatar">R</span>Riyam</a>
+    <a class="user" href="profile.html"><span class="avatar">U</span>User</a>
   </header>
   <main>
     <div class="page-head"><div><h1>My Profile</h1><p class="muted">View and update your personal information.</p></div></div>
     <section class="card">
-      <div class="member"><span class="avatar">R</span><div><h2>Riyam Alshareef</h2><p class="muted">Student ID: 2210283</p></div></div>
-      <form action="#" method="post">
+      <div class="member"><span class="avatar">R</span><div><h2>Riyam Alawaji</h2><p class="muted">Student ID: 2210283</p></div></div>
+      <form action="/profile" method="post">
         <div class="form-grid">
-          <div class="field"><label for="name">Full Name</label><input type="text" id="name" name="name" value="Riyam Alshareef" required></div>
-          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required></div>
-          <div class="field"><label for="uni">University</label><input type="text" id="uni" name="uni" value="University of Jeddah"></div>
+          <div class="field"><label for="name">Full Name</label><input type="text" id="name" name="name" value="full name" required maxlength="60"></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required maxlength="60"></div>
+          <div class="field"><label for="uni">University</label><input type="text" id="uni" name="uni" value="University of Jeddah" maxlength="60"></div>
           <div class="field"><label for="cv">Upload CV</label><input type="file" id="cv" name="cv"></div>
         </div>
         <div class="actions"><a class="btn btn-outline" href="dashboard.html">Cancel</a><button class="btn" type="submit">Save Changes</button></div>
