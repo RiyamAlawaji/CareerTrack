@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,35 +9,256 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
   <header class="site-header">
-    <a class="logo" href="Home.html"><img src="../media/logo.svg" alt="" width="32" height="32">CareerTrack</a>
-    <nav><ul><li><a href="Home.html">Home</a></li><li><a href="applications.html" class="active">Applications</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="about-us.html">About Us</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
-    <a class="user" href="profile.html"><span class="avatar">U</span>User</a>
+    <a class="logo" href="Home.html">
+      <img src="../media/logo.svg" alt="" width="32" height="32">
+      CareerTrack
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="applications.html" class="active">Applications</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a class="user" href="profile.html">
+      <span class="avatar">U</span>User
+    </a>
   </header>
+
   <main>
-    <div class="page-head"><div><h1>Add New Application</h1><p class="muted">Fill in the details of your application.</p></div></div>
-    <ol class="steps"><li class="on">Job Information</li><li>Application Details</li><li>Documents</li><li>Notes</li></ol>
-    <div class="grid-2">
-      <section class="card">
-        <h2>Job Information</h2>
-        <form action="/applications" method="post">
-          <div class="form-grid">
-            <div class="field full"><label for="company">Company *</label><input type="text" id="company" name="company" placeholder="e.g. Google" required autofocus maxlength="60"></div>
-            <div class="field full"><label for="position">Position *</label><input type="text" id="position" name="position" placeholder="e.g. Software Engineer" required maxlength="60"></div>
-            <div class="field full"><label for="type">Type *</label><select id="type" name="type" required><option value="">Select type</option><option>Internship</option><option>Co-op</option><option>Full-time</option></select></div>
-            <div class="field"><label for="date">Application Date *</label><input type="date" id="date" name="date" required></div>
-            <div class="field"><label for="link">Job Link (optional)</label><input type="url" id="link" name="link" placeholder="https://" maxlength="200"></div>
-          </div>
-          <div class="actions"><a class="btn btn-outline" href="applications.html">Cancel</a><button class="btn" type="submit">Next →</button></div>
-        </form>
-      </section>
-      <aside class="card side"><h3>Quick Tips</h3><ul><li>Use the exact company name as it appears on its website.</li><li>Make sure to select the correct application type.</li><li>Keep your notes updated with any important details.</li></ul></aside>
+
+    <div class="page-head">
+      <div>
+        <h1>Add New Application</h1>
+        <p class="muted">Fill in the details of your application.</p>
+      </div>
     </div>
+
+    <ol class="steps">
+      <li class="on">Job Information</li>
+      <li>Application Details</li>
+      <li>Documents</li>
+      <li>Notes</li>
+    </ol>
+
+    <div class="grid-2">
+
+      <section class="card">
+
+        <!-- STEP 1: JOB INFORMATION -->
+        <form id="job-form" action="/applications" method="post">
+
+          <div class="form-grid">
+
+            <div class="field full">
+              <label for="company">Company *</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="e.g. Google"
+                required
+                autofocus
+                maxlength="60">
+            </div>
+
+            <div class="field full">
+              <label for="position">Position *</label>
+              <input
+                type="text"
+                id="position"
+                name="position"
+                placeholder="e.g. Software Engineer"
+                required
+                maxlength="60">
+            </div>
+
+            <div class="field full">
+              <label for="type">Type *</label>
+              <select id="type" name="type" required>
+                <option value="">Select type</option>
+                <option>Internship</option>
+                <option>Co-op</option>
+                <option>Full-time</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="date">Application Date *</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="field">
+              <label for="link">Job Link (optional)</label>
+              <input
+                type="url"
+                id="link"
+                name="link"
+                placeholder="https://"
+                maxlength="200">
+            </div>
+
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-outline" href="applications.html">Cancel</a>
+            <button class="btn" type="submit">Next →</button>
+          </div>
+
+        </form>
+
+
+        <!-- STEP 2: APPLICATION DETAILS -->
+        <div id="application-details" hidden>
+
+          <h2>Application Details</h2>
+
+          <div class="form-grid">
+
+            <div class="field full">
+              <label for="status">Application Status *</label>
+              <select id="status" name="status" required>
+                <option value="">Select status</option>
+                <option>Applied</option>
+                <option>Interview</option>
+                <option>Offer</option>
+                <option>Rejected</option>
+                <option>Waiting</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="interviewDate">Interview Date (optional)</label>
+              <input
+                type="date"
+                id="interviewDate"
+                name="interviewDate">
+            </div>
+
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-outline" type="button" id="backBtn">
+              ← Back
+            </button>
+
+            <button class="btn" type="button" id="detailsNextBtn">
+              Next →
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- STEP 3: DOCUMENTS -->
+        <div id="documents-step" hidden>
+
+          <h2>Documents</h2>
+
+          <div class="form-grid">
+
+            <div class="field full">
+              <label for="cv">Upload CV (optional)</label>
+              <input
+                type="file"
+                id="cv"
+                name="cv"
+                accept=".pdf,.doc,.docx">
+            </div>
+
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-outline" type="button" id="documentsBack">
+              ← Back
+            </button>
+
+            <button class="btn" type="button" id="documentsNext">
+              Next →
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- STEP 4: NOTES -->
+        <div id="notes-step" hidden>
+
+          <h2>Notes</h2>
+
+          <div class="form-grid">
+
+            <div class="field full">
+              <label for="notes">Additional Notes (optional)</label>
+              <textarea
+                id="notes"
+                name="notes"
+                rows="5"
+                maxlength="1000"
+                placeholder="Write any important notes..."></textarea>
+            </div>
+
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-outline" type="button" id="notesBack">
+              ← Back
+            </button>
+
+            <button class="btn" type="button" id="saveApplication">
+              Save Application
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <aside class="card side">
+        <h3>Quick Tips</h3>
+
+        <ul>
+          <li>Use the exact company name as it appears on its website.</li>
+          <li>Make sure to select the correct application type.</li>
+          <li>Keep your notes updated with any important details.</li>
+        </ul>
+      </aside>
+
+    </div>
+
   </main>
+
+
   <footer class="site-footer">
-    <div><strong>CareerTrack</strong><p>Track every step toward your next opportunity.</p></div>
-    <nav><ul><li><a href="Home.html">Home</a></li><li><a href="applications.html">Applications</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="about-us.html">About Us</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
+
+    <div>
+      <strong>CareerTrack</strong>
+      <p>Track every step toward your next opportunity.</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="applications.html">Applications</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+      </ul>
+    </nav>
+
     <p class="copy">© 2025 CareerTrack. All rights reserved.</p>
+
   </footer>
+
+  <script src="../js/add-application.js"></script>
+
 </body>
 </html>
+```
