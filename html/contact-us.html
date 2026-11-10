@@ -17,7 +17,7 @@
     <div class="page-head"><div><h1>Contact Us</h1><p class="muted">Have a question? We'd love to hear from you.</p></div></div>
     <div class="contact-layout">
       <section class="card">
-        <form action="/contact" method="post">
+        <form id="contactForm" action="/contact" method="post">
           <div class="form-grid">
             <div class="field"><label for="fname">First Name *</label><input type="text" id="fname" name="fname" placeholder="e.g. Riyam" required maxlength="30"></div>
             <div class="field"><label for="lname">Last Name *</label><input type="text" id="lname" name="lname" placeholder="e.g. Alawaji" required maxlength="30"></div>
@@ -30,6 +30,7 @@
           </div>
           <div class="actions"><button class="btn" type="submit">Send Message <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></button></div>
         </form>
+        <p id="contactMessage" aria-live="polite"></p>
       </section>
       <aside class="card side info">
         <span class="plane"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span>
@@ -49,5 +50,6 @@
     <nav><ul><li><a href="Home.html">Home</a></li><li><a href="applications.html">Applications</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="about-us.html">About Us</a></li><li><a href="contact-us.html">Contact</a></li></ul></nav>
     <p class="copy">© 2025 CareerTrack. All rights reserved.</p>
   </footer>
+  <script src="../js/contact.js"></script>
 </body>
 </html>

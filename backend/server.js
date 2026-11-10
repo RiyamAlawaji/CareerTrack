@@ -499,6 +499,64 @@ app.get("/api/profile/cv", function (req, res) {
         }
     );
 });
+// Contact Us API
+app.post("/contact", async function (req, res) {
+    try {
+        const { fname, lname, gender, mobile, dob, email, lang, msg } = req.body;
+
+        // Backend validation
+        const validGenders = ["Female", "Male"];
+        const validLanguages = ["Arabic", "English", "French"];
+
+        if (
+            typeof fname !== "string" ||
+            typeof lname !== "string" ||
+            typeof gender !== "string" ||
+            typeof mobile !== "string" ||
+            typeof dob !== "string" ||
+            typeof email !== "string" ||
+            typeof lang !== "string" ||
+            typeof msg !== "string" ||
+            !fname.trim() ||
+            !lname.trim() ||
+            fname.length > 30 ||
+            lname.length > 30 ||
+            !validGenders.includes(gender) ||
+            !/^05\d{8}$/.test(mobile) ||
+            !/^\d{4}-\d{2}-\d{2}$/.test(dob) ||
+            !Number.isFinite(Date.parse(dob)) ||
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+            email.length > 60 ||
+            !validLanguages.includes(lang) ||
+            msg.trim().length < 10 ||
+            msg.length > 500
+        ) {
+            return res.status(400).send("Invalid contact information.");
+        }
+
+        await db.execute(
+            `INSERT INTO contact_messages
+            (first_name, last_name, gender, mobile, date_of_birth, email, language, message)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+                fname.trim(),
+                lname.trim(),
+                gender,
+                mobile,
+                dob,
+                email.trim(),
+                lang,
+                msg.trim()
+            ]
+        );
+
+        res.send("Your message has been sent successfully!");
+
+    } catch (error) {
+        console.error("Contact error:", error);
+        res.status(500).send("Failed to send message.");
+    }
+});
 // Start server
 app.listen(PORT, function () {
     console.log("=================================");
