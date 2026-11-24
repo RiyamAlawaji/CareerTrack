@@ -370,5 +370,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rangeSelect.addEventListener("change", updateChart);
 
+    // Show the name only if a profile has been saved in the database
+    async function loadGreeting() {
+        const greeting = document.getElementById("greeting");
+
+        try {
+            const response = await fetch("/api/profile");
+            const result = await response.json();
+
+            if (!response.ok || !result.profile || !result.profile.full_name) {
+                return; // no profile yet -> keep the generic "Welcome!"
+            }
+
+            const fullName = result.profile.full_name.trim();
+            const firstName = fullName.split(" ")[0];
+            const hour = new Date().getHours();
+            const timeGreeting =
+                hour < 12 ? "Good morning" :
+                hour < 18 ? "Good afternoon" : "Good evening";
+
+            greeting.textContent = timeGreeting + ", " + firstName + "! 👋";
+
+        } catch (error) {
+            console.error("Greeting error:", error);
+        }
+    }
+
+    loadGreeting();
     loadDashboard();
 });

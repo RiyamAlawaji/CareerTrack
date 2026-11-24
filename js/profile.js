@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             cvLink.hidden = !result.profile.cv_filename;
 
+            // Show the saved name in the profile header
+            const displayName = document.getElementById("profileDisplayName");
+            const avatar = document.getElementById("profileAvatar");
+            const subtitle = document.getElementById("profileSubtitle");
+            if (result.profile.full_name) {
+                displayName.textContent = result.profile.full_name;
+                avatar.textContent = result.profile.full_name.charAt(0).toUpperCase();
+                subtitle.textContent = result.profile.university || "";
+            }
+
         } catch (error) {
             console.error(error);
             message.textContent = "Could not load profile.";
